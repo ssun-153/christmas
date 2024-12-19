@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Card</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="index.js"></script>
+    <script src="music.js"></script>
+    <script src="share.js"></script>
+</head>
+<body>
+    <div id="postcard">
+        <img src="./1.jpg" class="postcard-background">
+        <div id="msg-containor">
+            <p class="p-message">Merry Christmas</p>
+            <p class="p-name hidden">- SSUN -</p>
+        </div>
+    </div>
+
+    <div id="btn-containor">
+        <button class="btn-bgm" onclick="controlBgm()">BGM</button>
+        <button class="btn-share" onclick="shareMessage()">SHARE</button>
+        <button onclick="renewMessage()">REFRESH</button>
+    </div>
+
+    <audio loop id="audio-bgm">
+        <source src="./MA_EvgenyNazarenko_Christmas Time Is Here Again_Main.wav" type="audio/wav">
+    </audio>
+
+    <script>
+        var containor = document.querySelector('#postcard');
+
+        containor.addEventListener('mousemove', function (e) {
+            var rect = containor.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            var rotateX = ((y / rect.height - 0.5) * -50).toFixed(2);
+            var rotateY = ((x / rect.width - 0.5) * 50).toFixed(2);
+            containor.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        containor.addEventListener('mouseout', function () {
+            containor.style = `transform: perspective(350px) rotateX(0deg) rotateY(0deg)`;
+            containor.style.transition = 'transform 1s ease'; });
+    </script>
+</body>
+</html>
