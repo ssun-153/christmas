@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'KyoboHand';
+}
+
+body {
+    background-image: url('./BG2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#postcard {
+    width: 400px;
+    position: absolute;
+}
+
+.postcard-background {
+    width: 100%;
+    border-radius: 30px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white;
+}
+
+#msg-containor {
+    position: absolute;
+    width: 100%;
+    top: 0%;
+}
+
+p {
+    color: white;
+    padding-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.p-message {
+    width: 80%;
+}
+
+.p-name {
+    /*font-size: 20px;*/
+    text-align: end;
+    padding-right: 10px;
+}
+
+#btn-containor {
+    width: 450px;
+    margin-top: 400px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+}
+
+button {
+    color: white;
+    background-color: rgb(0, 64, 14);
+    width: 27%;
+    margin:10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
